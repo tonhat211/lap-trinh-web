@@ -1,0 +1,423 @@
+:root {
+    --header-height: 40px;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+html {
+    padding: 0;
+    padding: 0;
+}
+
+.main-container {
+    min-width: 1024px;
+}
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+}
+
+.nav {
+    height: 100%;
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bbbaba;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0 10px;
+    height: 100%;
+    position: relative;
+}
+
+.nav-item::after {
+    position: absolute;
+    width: 100%;
+    height: var(--header-height);
+    top: calc(var(--header-height) - 4px);
+    left: 10px;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background-color: #8B0000;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-sub-list {
+    position: absolute;
+    min-width: 150%;
+    background-color: #EEEEEE;
+    top: calc(var(--header-height) + 1px);
+    left: 10px;
+    padding: 0;
+    z-index: 1;
+    display: none;
+}
+
+.nav-item:hover .nav-sub-list {
+    display: block;
+}
+
+.nav-sub-item {
+    list-style: none;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-bottom: 1px solid #bbbaba;
+}
+
+.nav-sub-item:hover {
+    cursor: pointer;
+    background-color: #8B0000;
+}
+
+/*  form 1*/
+.content {
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-1-container {
+    background-color: white;
+    width: 60%;
+    border: 2px solid #EEEEEE;
+    border-radius: 10px;
+}
+
+.form-1-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.input-wrap {
+    /*width: 100%;*/
+    border: 2px solid #eee;
+    background-color: #fcfafa;
+    border-radius: 7px;
+    padding: 5px 10px;
+    margin: 10px 5px;
+    flex-grow: 1;
+
+}
+
+.input-wrap textarea,
+.input-wrap select,
+.input-wrap input {
+    border: none;
+    outline: none;
+    background-color: #fcfafa;
+    width: 100%;
+
+
+}
+
+.input-title {
+    display: block;
+    font-size: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.two-input {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.select-show {
+    /*color: black;*/
+    /*font-weight: 900;*/
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.input-wrap textarea {
+    background-color: white;
+
+}
+
+.btnSubmit1 {
+    border: none;
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+}
+
+.btnSubmit1:hover {
+    cursor: pointer;
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.btn-border {
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+
+/*form 2*/
+
+.vu-tru-bg {
+    background-image: url("../img/vu-tru.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+
+
+
+}
+
+.form-2-container {
+    width: 30%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.form-2-title {
+    text-align: center;
+}
+
+.input-2-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*width: 100%;*/
+    padding: 20px;
+}
+
+.input-2-container button,
+.input-2-container input {
+    margin: 10px 0;
+}
+
+.input-2-container input {
+    border-radius: 7px;
+    height: 30px;
+    /*width: 100%;*/
+    padding: 4px 10px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 2px 4px 4px #d7d3d3;
+
+
+}
+
+.input-2-container button {
+    background-color: black;
+    box-shadow: 0 5px 4px 4px #d7d3d3;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+
+    /*padding: 0;*/
+}
+
+.form-message {
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    margin: 40px 0 10px;
+}
+
+.social-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.social-icon {
+    color: black;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    box-shadow: 1px 2px 1px 1px #d7d3d3;
+    text-align: center;
+
+
+}
+
+.form-2-sign-up {
+    margin: 40px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-sign-up {
+    text-decoration: none;
+    color: #ccc;
+}
+
+/*form 3*/
+
+.inputs-title {
+    font-size: 17px;
+    color: #20c997;
+}
+.input-wrapper {
+    /*padding: 10px 15px;*/
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+}
+
+.icon-input {
+    padding: 10px 11px 10px 10px;
+    border-right: 1px solid #ccc;
+    margin: 7px;
+}
+
+.input-wrapper input {
+    padding: 10px;
+    border: none;
+    width: 100%;
+    margin: 7px 7px 7px 0;
+    outline: none;
+    font-size: 19px;
+
+}
+
+.info-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-input__item {
+    flex-grow: 1;
+}
+
+.info-input__item > div{
+    display: flex;
+    align-items: center;
+}
+
+.info-input {
+    font-size: 19px;
+    padding: 10px;
+    border-radius: 4px;
+    max-width: 100px;
+    border: 1px solid #cccccc;
+    margin: 0 5px;
+    background-color: #EEEEEE;
+
+}
+
+.width-50px {
+    width: 50px;
+}
+
+.ml-0px {
+    margin-left: 0;
+}
+
+.mr-0px {
+    margin-right: 0;
+}
+
+.info-btn {
+    background-color: #EEEEEE;
+
+   width: 100px;
+
+}
+
+.payment-kind {
+    display: flex;
+    align-items: center;
+}
+
+.payment-kind__btn {
+    width: 50%;
+    max-width: 1000px;
+}
+
+.input-wrapper {
+    margin: 20px 0;
+    background-color: #EEEEEE;
+}
+
+.input-wrapper input {
+    background-color: #EEEEEE;
+
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-info > div {
+    flex-grow: 1;
+}
+
+.date-input {
+    text-align: right;
+}
+
+.payment-kind i {
+    padding: 0 15px;
+}
+
+.info-btn,
+.payment-kind__btn {
+    background-color: #EEEEEE;
+
+}
+
+.payment-kind__btn.active {
+    background-color: #20c997;
+}
+
+.form-3-container {
+    border: 2px solid #ccc;
+    border-radius: 7px;
+    padding: 20px;
+}
+
