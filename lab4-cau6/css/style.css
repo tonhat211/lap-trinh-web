@@ -1,0 +1,111 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+html {
+    padding: 0;
+    padding: 0;
+}
+
+.main-container {
+    min-width: 1024px;
+}
+
+/*  form 1*/
+.content {
+    margin: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-1-container {
+    background-color: white;
+    width: 60%;
+    border: 2px solid #EEEEEE;
+    border-radius: 10px;
+}
+
+.form-1-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.input-wrap {
+    /*width: 100%;*/
+    border: 2px solid #eee;
+    background-color: #fcfafa;
+    border-radius: 7px;
+    padding: 5px 10px;
+    margin: 10px 5px;
+    flex-grow: 1;
+
+}
+
+.input-wrap textarea,
+.input-wrap select,
+.input-wrap input {
+    border: none;
+    outline: none;
+    background-color: #fcfafa;
+    width: 100%;
+
+
+}
+
+.input-title {
+    display: block;
+    font-size: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.two-input {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.select-show {
+    /*color: black;*/
+    /*font-weight: 900;*/
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.input-wrap textarea {
+    background-color: white;
+
+}
+
+.btnSubmit1 {
+    border: none;
+    width: 100%;
+    margin: 0 auto;
+    color: white;
+}
+
+.btnSubmit1:hover {
+    cursor: pointer;
+}
+
+.black-bg {
+    background-color: black;
+}
+
+.btn-border {
+    border-radius: 20px;
+    cursor: pointer;
+
+}

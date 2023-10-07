@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lab 4 - cau 6</title>
+</head>
+<body>
+<div class="main-container">
+
+    <div class="content">
+        <div class="form-1-container">
+            <form action="" class="form-1">
+                <div class="form-1-title">
+                    <h3 class="">Contact us</h3>
+                </div>
+                <div class="input-wrap">
+                    <span class="input-title">Full name *</span>
+                    <input type="text" class="full-name" placeholder="Enter your name" title="*">
+
+                </div>
+                <div class="two-input">
+                    <div class="input-wrap">
+                        <span class="input-title">Email *</span>
+                        <input type="text" class="email" id="email" onchange="checkEmail()" placeholder="Enter your email" title="*">
+                        <span class="error"></span>
+
+                    </div>
+                    <div class="input-wrap">
+                        <span class="input-title">Phone</span>
+                        <input type="text" class="phoneNumber" id="phoneNum" onchange="checkPhone()" placeholder="Enter phone number" title="*">
+                        <span class="error"></span>
+
+                    </div>
+                </div>
+                <div class="input-wrap">
+                    <span class="input-title">Needed services *</span>
+                    <select name="services" id="services">
+                        <option value="" class="select-show">Please choose</option>
+                        <option value="food">Food</option>
+                        <option value="drink">Drink</option>
+                        <option value="employee">Employee</option>
+                        <option value="carPark">Car park</option>
+                    </select>
+                </div>
+                <div class="input-wrap white-bg">
+                    <span class="input-title">Message</span>
+                    <textarea name="" id="" cols="30" rows="10" class=""></textarea>
+                </div>
+                <div class="input-wrap black-bg btn-border">
+                    <button type="submit" class="btnSubmit1 black-bg">Submit</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script !src="">
+
+
+
+
+
+    function checkEmail() {
+        const emailE = document.querySelector('#email');
+        var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var isOk = regex.test(emailE.value);
+        console.log(emailE.value);
+        console.log(isOk);
+        // console.log(regex.test(emailE.value));
+        const emailParent = emailE.parentElement;
+        const errorE = emailParent.querySelector(".error");
+        if(isOk) {
+            // const emailParent = emailE.parentElement;
+            // const errorE = emailParent.querySelector(".error");
+            errorE.innerText = "";
+            emailParent.style.border = "none";
+
+
+        } else {
+
+            errorE.innerText = "Email khong hop le";
+            errorE.style.color = "red";
+            emailParent.style.border = "1px solid red";
+
+        }
+
+    }
+
+    function  checkPhone() {
+        const phoneE = document.querySelector('#phoneNum');
+        var num = phoneE.value;
+        const phoneNumParent = phoneE.parentElement;
+        const errorE = phoneNumParent.querySelector(".error");
+        var nums = num.split("");
+        console.log(nums);
+        var isOk = true;
+        if((nums.length) == 7 || (nums.length ==11)) {
+            for(var i = 0; i< nums.length; i++ ) {
+                if ( !(nums[i].codePointAt() >= 48 && nums[i].codePointAt() <=57)) {
+                    isOk=false;
+                    break;
+                }
+
+            }
+        }
+        else {
+            isOk=false;
+        }
+        if(isOk) {
+            errorE.innerText = "";
+            phoneNumParent.style.border = "none";
+        } else {
+            errorE.innerText = "So dien thoai khong hop le";
+            errorE.style.color = "red";
+            phoneNumParent.style.border = "1px solid red";
+
+        }
+
+    }
+</script>
+</body>
+</html>

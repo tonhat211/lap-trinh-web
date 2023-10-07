@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lab4</title>
+</head>
+<body>
+    <div class="container grid">
+        <div class="grid__row btns-con">
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('blue')" style="background-color: blue"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('black')" style="background-color: black"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('red')" style="background-color: red"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('gray')" style="background-color: gray"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('orange')" style="background-color: orange"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('green')" style="background-color: green"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('pink')" style="background-color: pink"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('brown')" style="background-color: brown"></button>
+            </div>
+            <div class="grid__col-3 btn-item-con">
+                <button class="btn-item co-white" onclick="changeBg('yellow')" style="background-color: yellow"></button>
+            </div>
+
+
+
+        </div>
+
+        <div class="grid__row image-container">
+            <div class="img-con">
+                <img src="./img/samsung-s23.webp" class="img-item" alt="">
+<!--                <img src="img/samsung-s23.webp">-->
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        randomHi();
+        function  changeBg(color) {
+            document.body.style.background = color;
+            // console.log(color);
+        }
+
+        function giaiPtBac2(a,b,c) {
+            if(a!=0) {
+                var re = `ket qua cua phuong trinh ${a}(x**x) + ${b}x + ${c}= 0 la: "`
+                var delta = (b*b) - (4*a*c);
+                if (delta <0) {
+                    re +="Vo nghiem";
+                }
+                if (delta ===0) {
+                    var result = -b / (2*a);
+                    re +="phuong trinh co nghiem kep: " + result;
+                    // return "phuong trinh co nghiem kep: " + result;
+                }
+                if (delta > 0) {
+                    var x1 = (-b + Math.sqrt(delta)) / (2*a);
+                    var x2 = (-b - Math.sqrt(delta)) / (2*a);
+                    re +="x1= " + x1 + " ,x2= " +x2;
+                    // return "x1= " + x1 + " ,x2= " +x2;
+
+                }
+                alert(re);
+            }
+            else {
+
+                alert("phuong trinh khong thoa dieu kien a>0");
+            }
+        }
+
+        giaiPtBac2(4,-2,-6);
+
+
+
+        function randomHi() {
+            var his = [
+                "good morning",
+                "good afternoon",
+                "good evening",
+                "good night",
+                "chào",
+                "u oa",
+                "hi",
+                "hello"
+            ];
+
+            var max = his.length
+            var rd = Math.floor(Math.random() * (max-1));
+
+            alert(his[rd]);
+
+        }
+
+        const imgE = document.querySelector(".img-item");
+        var degg = 0;
+        setInterval(function (){
+            degg+=15;
+            imgE.style.transform = `rotate(${degg}deg)`;
+            // console.log(imgE);
+        },2000);
+
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.grid {
+    widthh: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+
+
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.grid__col-3 {
+    width: 25%;
+    padding: 0 10px;
+}
+
+.grid__col-9 {
+    width: 75%;
+    padding: 0 10px;
+}
