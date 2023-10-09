@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Lab4 - cau 7</title>
+</head>
+<body>
+
+    <div class="grid container">
+        <div class="grid__row">
+            <div class="grid__col-3 nav">
+                <div class="jcenter">
+                    <div class="time">
+                        <p class="minute">00</p>
+                        <p>:</p>
+                        <p class="second">00</p>
+                    </div>
+                </div>
+
+                <div class="jcenter">
+                    <button class="btn-reset" onclick="reset()">Reset</button>
+                </div>
+
+                <div class="jcenter score">
+                    <p>Finished level</p>
+                    <button class="btn-item btn-show-level">0</button>
+                </div>
+
+
+
+
+            </div>
+            <div class="grid__col-8 btn-container">
+                <div class="grid__row btn-list">
+<!--                   a button-->
+<!--                    <div class="grid__col-8-1">-->
+<!--                        <button class="btn-item" onclick="actionn(this)">1</button>-->
+<!--                    </div>-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="congra">
+        <h3>Congratulations!</h3>
+        <h4>Your time is: <span class="minn">01</span> : <span class="secc">01</span></h4>
+        <button class="btn-reset-congra" onclick="reset()">Retry</button>
+
+    </div>
+
+    <script !src="">
+        const  btnList = document.querySelector(".btn-list");
+        const  btnLevel = document.querySelector(".btn-show-level");
+        const minn = document.querySelector(".congra .minn");
+        const secc = document.querySelector(".congra .secc");
+        const containerE = document.querySelector(".container");
+        const congraE = document.querySelector(".congra");
+        var sec=0;
+        var min=0;
+        function reset() {
+            location.reload();
+        }
+
+        function newRound(num) {
+            const minE = document.querySelector(".minute");
+            const secE = document.querySelector(".second");
+
+
+
+            var list = randomlocation(num);
+            btnList.innerHTML ="";
+            for(let i = 0; i<num; i++)  {
+
+                btnList.innerHTML += `
+                    <div class="grid__col-8-1">
+                        <button class="btn-item" onclick="actionn(this)">${list[i]}</button>
+                    </div>
+                    `
+            }
+
+            function randomlocation(num) {
+                var list = [];
+                for(let i=1; i<=num;i++) {
+                    list.push(i);
+                }
+                num-=1;
+                for(let i=1; i<=num;i++) {
+                    let j = Math.floor(Math.random() * (num - 1)) + 1;
+                    let temp = list[i];
+                    list[i] = list[j];
+                    list[j] = temp;
+                }
+                return list;
+            }
+
+            function runTime() {
+
+
+                setInterval(function (){
+
+                    sec+=1;
+                    if(sec==60) {
+                        min+=1;
+                        sec=0;
+                        if(min<10){
+                            minE.innerText = "0" + min;
+
+                        } else {
+                            minE.innerText = min;
+                        }
+                    }
+                    if(sec<10) {
+                        secE.innerText = "0" +sec;
+                    } else {
+                        secE.innerText = sec;
+                    }
+
+
+                },1000);
+            }
+
+            runTime();
+        }
+
+        newRound(64);
+
+
+        function Queue() {
+            this.elements = [];
+        }
+        Queue.prototype.enqueue = function(e) {
+            this.elements.push(e);
+        };
+        Queue.prototype.dequeue = function() {
+            return this.elements.shift();
+        };
+        Queue.prototype.isEmpty = function() {
+            return this.elements.length == 0;
+        };
+        Queue.prototype.length = function() {
+            return this.elements.length;
+        }
+
+        Queue.prototype.peek = function() {
+
+            // Nếu hàng đợi không trống => Trả về phần tử đầu tiên
+            // ngược lại, trả về undefined
+            return !this.isEmpty() ? this.elements[0] : undefined;
+        };
+
+        // var data= new Queue();
+        function newQueue(num) {
+            var temp = new Queue();
+            for(var i=1; i<=num;i++) {
+                temp.enqueue(i);
+            }
+            return temp;
+        }
+        var data = newQueue(64);
+
+        function actionn(e) {
+            // console.log(e.target.innerText);
+
+            let currentNum = data.peek();
+            let btnNum = parseInt(e.innerText);
+            if(btnNum === currentNum){
+                e.style.opacity="0";
+                e.style.cursor="default";
+                data.dequeue();
+                btnLevel.innerText=btnNum;
+            }
+
+            if(data.isEmpty() ){
+                if(min<9)
+                    minn.innerText = "0" + min;
+                else
+                    minn.innerText = min;
+
+                if(sec<9)
+                    secc.innerText = "0" + sec;
+                else
+                    secc.innerText = sec;
+
+
+                containerE.style.display= "none";
+                congraE.style.display= "flex";
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
